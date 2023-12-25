@@ -6,9 +6,9 @@
     <title>Your JSP Page</title>
 </head>
 <body>
-   <form action="add">
-    Enter 1st number : <input type="text " name="num1">
-    Enter 2nd number : <input type="text " name="num2">
+   <form action="addAlien">
+    Enter alien aid : <input type="text " name="aid">
+    Enter alien name : <input type="text " name="aname">
     <input type="submit" >
 
 

@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>
-        result is :${sum}
+        result is :${a1}
     </h1>
 </body>
 </html>

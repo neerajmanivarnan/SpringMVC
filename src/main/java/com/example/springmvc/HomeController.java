@@ -3,11 +3,12 @@ package com.example.springmvc;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import jakarta.servlet.http.HttpSession;
+import com.example.springmvc.modal.Alien;
 
 
 @Controller
@@ -18,7 +19,7 @@ public class HomeController {
     }
 
     @RequestMapping("add")
-    public ModelAndView add(@RequestParam("num1") int i, @RequestParam("num2")int j,HttpSession session){
+    public ModelAndView add(@RequestParam("num1") int i, @RequestParam("num2")int j){
         ModelAndView mv = new ModelAndView();
         mv.setViewName("result.jsp");
 
@@ -26,6 +27,12 @@ public class HomeController {
         mv.addObject("sum",sum);
 
         return mv;
+    }
+
+    @RequestMapping("addAlien")
+    public String addAlien(@ModelAttribute("a1") Alien a){
+        
+        return "result.jsp";
     }
 
 }
