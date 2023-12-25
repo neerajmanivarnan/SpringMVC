@@ -3,7 +3,10 @@ package com.example.springmvc;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -29,9 +32,16 @@ public class HomeController {
         return mv;
     }
 
-    @RequestMapping("addAlien")
+    @GetMapping("getAliens")
+    public String getAliens(Model m){
+        m.addAttribute("result");
+
+        return "showAliens.jsp";
+    }
+
+    @PostMapping("addAlien")
     public String addAlien(@ModelAttribute("a1") Alien a){
-        
+
         return "result.jsp";
     }
 
