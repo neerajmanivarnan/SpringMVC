@@ -13,13 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.springmvc.modal.Alien;
-import com.example.springmvc.modal.AlienRepo;
 
 
 @Controller
 public class HomeController {
     @Autowired
-    AlienRepo repo;
+    private modayRepo repo;
     @RequestMapping("/")
     public String home(){
         return "index.jsp";
