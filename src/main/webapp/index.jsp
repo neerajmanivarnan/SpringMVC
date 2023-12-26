@@ -6,10 +6,19 @@
     <title>Your JSP Page</title>
 </head>
 <body>
-   <form action="addAlien" method="post">
+   <!-- <form action="add" method="get">
     Enter alien aid : <input type="text " name="aid">
     Enter alien name : <input type="text " name="aname">
-    <input type="submit" >
+    <input type="submit" > -->
+
+    <form action="getAliens" method="get">
+        <!-- Enter alien aid : <input type="text " name="aid">
+        Enter alien name : <input type="text " name="aname"> -->
+
+        enter a number : <input type="text" name="num1" >
+        enter another  number : <input type="text" name="num2" >
+        <input type="submit" >
+    
 
 
    </form>

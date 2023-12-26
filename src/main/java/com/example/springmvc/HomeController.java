@@ -2,6 +2,7 @@ package com.example.springmvc;
 
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +13,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.springmvc.modal.Alien;
+import com.example.springmvc.modal.AlienRepo;
 
 
 @Controller
 public class HomeController {
+    @Autowired
+    AlienRepo repo;
     @RequestMapping("/")
     public String home(){
         return "index.jsp";
@@ -33,11 +37,14 @@ public class HomeController {
     }
 
     @GetMapping("getAliens")
-    public String getAliens(Model m){
-        m.addAttribute("result");
+public String getAliens(Model m){
+  // List aliens =  Arrays.asList(new Alien(102,"Neeraj"),new Alien(103,"Manivarnan"));
+   m.addAttribute("aliens", repo.findAll());
+   
+   
+    return "showAliens.jsp";
+}
 
-        return "showAliens.jsp";
-    }
 
     @PostMapping("addAlien")
     public String addAlien(@ModelAttribute("a1") Alien a){

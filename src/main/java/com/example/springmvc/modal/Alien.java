@@ -2,9 +2,16 @@ package com.example.springmvc.modal;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table
 public class Alien {
+
+    public Alien(int aid, String aName) {
+        this.aid = aid;
+        this.aName = aName;
+    }
 
     @Id
     private int aid;
@@ -19,16 +26,16 @@ public class Alien {
         this.aid = aid;
     }
 
-    public String getAname() {
+    public String getAName() {
         return aName;
     }
 
-    public void setAname(String aName) {
+    public void setAName(String aName) {
         this.aName = aName;
     }
 
     @Override
     public String toString() {
-        return "Alien [aid = " + aid + ", aname= " + aName + " ]";
+        return "Alien [aid = " + aid + ", aName = " + aName + "]";
     }
 }
